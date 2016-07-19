@@ -1,0 +1,78 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About.html</title>
+{#    <style>#}
+{#            body {#}
+{#               background-color: #c7e6ff;#}
+{#            }#}
+{#            em {#}
+{#                color: #2104b2;#}
+{#            }#}
+{#    </style>#}
+</head>
+
+<body>
+    <table class="schedule" border="1" cellspacing="3" cellpadding="5">
+	          <colgroup>
+			        <col class="firstCol">
+			        <col class="dayCols" span="2"/>
+	          </colgroup>
+
+	              <thead>
+	              <tr>
+			            <th>Time</th>
+                        <th>OPEN</th>
+                        <th>CLOSED</th>
+	              </tr>
+	              </thead>
+   <!-- table body -->
+             <tbody  vertical-align:"top">
+	                  <tr>
+			                <th>Monday</th>
+			                <td> 8:00am </td>
+                            <td>10:00pm </td>
+	                  </tr>
+	                   <tr>
+			                <th>Tuesday</th>
+			                    <td>8:00am </td>
+                                <td>10:00pm </td>
+	                  </tr>
+	                  <tr>
+			                <th>Wednesday</th>
+				                <td>8:00am </td>
+                                <td>10:00pm </td>
+	                   </tr>
+	                   <tr>
+			                <th>Thursday</th>
+				                <td>8:00am </td>
+                                <td>10:00pm </td>
+	                   </tr>
+	                   <tr>
+			                <th>Friday</th>
+				                <td>8:00am </td>
+                                <td>10:00pm </td>
+	                   </tr>
+	                   <tr>
+			                <th>Saturday</th>
+				                <td rowspan="2">1:00pm</td>
+                                <td rowspan="2">8:00pm</td>
+	                   </tr>
+	                   <tr>
+			                <th>Sunday</th>
+            </tbody>
+	  </table>
+  <!--end of table-->
+
+			<ul class="small">
+                <li>Monday May 23rd   Victory Day    CLOSED</li>
+				<li>Friday July 1st   Canada Day     CLOSED</li>
+				<li>Monday Aug 1st    Civic Holiday  CLOSED</li>
+			</ul>
+
+<p> This page has been visited {{ aboutVisits }} times</p>
+</body>
+{% endblock %}

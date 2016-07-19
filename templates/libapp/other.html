@@ -1,0 +1,15 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+    <h2>List of Other Library Items</h2>
+{% if otherlist %}
+    <ol>
+    {% for other in otherlist %}
+    <li><a href="/libapp/{{ other.id }}"> {{ other }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <strong>There is no other items in Library!</strong>
+{% endif %}
+
+
+{% endblock %}

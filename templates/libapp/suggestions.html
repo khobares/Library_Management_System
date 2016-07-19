@@ -1,0 +1,15 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+{% if itemlist %}
+    <h2>List of Suggestion items for purchasing</h2>
+    <ol>
+        {% for item in itemlist %}
+            <li><a href="/libapp/suggestdetail/{{ item.id}}">{{ item.get_type_display}}:  {{ item}} </a></li>
+        {% endfor %}
+    </ol>
+
+{% else %}
+    <strong>There are no available items!</strong>
+{% endif %}
+
+{% endblock %}

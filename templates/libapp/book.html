@@ -1,0 +1,15 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+    <h2>List of Library Books</h2>
+{% if booklist %}
+    <ol>
+    {% for book in booklist %}
+    <li><a href="/libapp/{{ book.id }}"> {{ book }}</a></li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <strong>There is no book in library!</strong>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+<head>
+<title>MAC Library APP - {% block title %}Welcome!{% endblock %}</title>
+
+        <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href={% static "Content/bootstrap.min.css"%}  />
+        <link  rel="stylesheet" type="text/css" href={% static "libapp/style.css"%}  />
+        <script src={% static "Scripts/jquery-1.9.1.min.js"%}></script>
+        <script src={% static "Scripts/bootstrap.min.js"%}></script>
+        <link  rel="stylesheet" type="text/css" href={% static "Content/animate.css"%}  />
+        <script src={% static "Scripts/wow.min.js"%}></script>
+</head>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<body>
+    <header class="container-fluid">
+
+<img class="img-responsive" src="{% static 'images/banner2.png' %}" alt="library"/>
+    </header>
+
+
+
+{#----------------------------------------------------------------------------------------------------------------#}
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+{#             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>#}
+          <li> <a href = "{% url 'libapp:index' %}">Home</a></li>
+          <li><a href="{% url 'libapp:about' %}">About</a></li>
+          <li><a href="{% url 'libapp:searchlib' %}">Search Books</a></li>
+          <li><a href="{% url 'libapp:suggestions' %}">View Suggestions</a></li>
+          <li><a href="{% url 'libapp:newitem' %}">Suggest Items</a></li>
+          {% if request.user.is_authenticated%}
+          <li><a href = "{% url 'libapp:logout' %}"> logout</a></li>
+          <li> <a href = "{% url 'libapp:myitems' %}">My Account</a></li>
+          {% else %}
+          <li> <a href = "{% url 'libapp:login' %}"> login</a></li>
+          <li> <a href = "{% url 'libapp:register' %}">Register</a></li>
+          {% endif %}
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
+</nav>
+{#-------------------------------------------------------------------------------------------------------------#}
+
+
+        <div class="content">
+            <h1>{% block myhdg %}Hello {{ user.first_name }}{% endblock %}</h1>
+            {% block body_block %}*** {% endblock %}
+        </div>
+        <footer class="container-fluid">  Created by Mac program 60-634-52 Group3 </footer>
+
+
+
+</body>
+</html>

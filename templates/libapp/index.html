@@ -1,0 +1,18 @@
+{% extends 'libapp/base.html' %}
+{% load bootstrap3 %}
+{% block body_block %}
+{#{% if itemlist %}#}
+{#    <h2>List of Library items</h2>#}
+{#    <ol>#}
+{#        {% for item in itemlist %}#}
+{#            <li><a href="/libapp/{{ item.id }}">{{ item.itemtype }}:  {{ item }}</a></li>#}
+{#        {% endfor %}#}
+{#    </ol>#}
+{##}
+{#{% else %}#}
+{#    <strong>There are no available items!</strong>#}
+{#{% endif %}#}
+
+{% include 'libapp/index_old.html' %}
+{% endblock %}
+

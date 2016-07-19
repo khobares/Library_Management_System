@@ -1,0 +1,18 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+    {% if message %}
+        {{ message }}
+    {% else %}
+        <p>Your searched for title: '{{ title }}'</p>
+        <p>Your searched books writtern by author: '{{ author }}'</p>
+        <p>Your searched DVDs published by maker: '{{ maker }}'</p>
+        <p>Search Result</p>
+        {% for item in items %}
+             <p>{{ item.itemtype }}:{{ item.title }}    {{ item.maker }}{{ item.author }}</p>
+        {% endfor %}
+    {% endif %}
+
+{#<p><a href = "{% url 'libapp:index' %}">Click here to return to main page</a><br/></p>#}
+{#<p><a href = "{% url 'libapp:searchilib' %}">Click here to search again</a><br/><p>#}
+
+{% endblock %}

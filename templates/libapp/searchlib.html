@@ -1,0 +1,12 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+<h1>Search in Library</h1>
+<form action="/libapp/result" method="get">
+   Title Search:<input type="text" name="title">
+   Author Search:<input type="text" name="author">
+    Maker Search:<input type="text" name="maker">
+   <p><input type="submit" value="Search"></p>
+</form>
+<li class="hbar1"><a href = "{% url 'libapp:index' %}">Click here to return to main page</a><br/></li>
+
+{% endblock %}

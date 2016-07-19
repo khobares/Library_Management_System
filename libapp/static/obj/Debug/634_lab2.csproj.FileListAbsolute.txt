@@ -1,0 +1,5 @@
+C:\Users\Peien\Documents\Visual Studio 2012\Projects\WebProject1\634_lab2\634_lab2\bin\634_lab2.dll
+C:\Users\Peien\Documents\Visual Studio 2012\Projects\WebProject1\634_lab2\634_lab2\bin\634_lab2.pdb
+C:\Users\Peien\Documents\Visual Studio 2012\Projects\WebProject1\634_lab2\634_lab2\obj\Debug\634_lab2.csprojResolveAssemblyReference.cache
+C:\Users\Peien\Documents\Visual Studio 2012\Projects\WebProject1\634_lab2\634_lab2\obj\Debug\634_lab2.dll
+C:\Users\Peien\Documents\Visual Studio 2012\Projects\WebProject1\634_lab2\634_lab2\obj\Debug\634_lab2.pdb

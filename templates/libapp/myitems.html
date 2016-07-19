@@ -1,0 +1,18 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+    {% if message %}
+        {{ message }}
+{% elif myitem  %}
+    <h2>Items checked out by {{ user.first_name }}</h2>
+    <ol>
+        {% for item in myitem %}
+            <li>{{ item.get_itemtype_display}}:  {{ item }}</li>
+        {% endfor %}
+    </ol>
+
+{% else %}
+    <strong>There is no available items!</strong>
+{% endif %}
+
+
+{% endblock %}

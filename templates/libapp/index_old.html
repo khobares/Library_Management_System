@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+    <script>
+        //initialize WOW for element animation
+        new WOW().init()
+    </script>
+
+<head lang="en">
+{#    <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />#}
+{#    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>#}
+{#    <link href="../Content/bootstrap.min.css" rel="stylesheet" />#}
+{#    <link href="style.css" rel="stylesheet" />#}
+{#    <script src="../Scripts/jquery-1.9.1.min.js"></script>#}
+{#    <script src="../Scripts/bootstrap.min.js"></script>#}
+{#    <link href="../Content/animate.css" rel="stylesheet" />#}
+{#    <script src="../Scripts/wow.min.js"></script>#}
+    <meta charset="UTF-8">
+    <title>My Library APP</title>
+</head>
+
+<body>
+{#<header>#}
+{#   <!-- <nav class="navbar navbar-default"> -->#}
+{#    </header>#}
+{#    {% if itemlist %}#}
+{#        <h2>List of Library items</h2>#}
+{#        <ol>#}
+{#            {% for item in itemlist %}#}
+{#                <li><a href="/libapp/{{ item.id }}">{{ item.itemtype }}:  {{ item }}</a></li>#}
+{#            {% endfor %}#}
+{#        </ol>#}
+{##}
+{#    {% else %}#}
+{#        <strong>There are no available items!</strong>#}
+{#    {% endif %}#}
+<hr>
+            <section id="activities" class="row activity-section">
+
+                <div class="activity-element col-md-4 wow flip">
+		            <a href ={% url 'libapp:book' %} style="outline:none"> <img src={% static "images/books-icon.png" %} alt="book">
+                        <p>Books</p>
+                    </a>
+                </div>
+                <div class="activity-element col-md-4 wow flip">
+		            <a href ={% url 'libapp:dvd' %} style="outline:none"> <img src={% static "images/dvd-icon.png" %} alt="dvd">
+                        <p> DVDs </p>
+		            </a>
+                </div>
+                <div class="activity-element col-md-4 wow flip">
+                    <a href ={% url 'libapp:other' %} style="outline:none"> <img src={% static "images/item-icon.png" %} alt="item">
+                        <p>Other Items</p>
+                    </a>
+                </div>
+            </section>
+    </div>
+    <hr>
+    {% ifnotequal request.session.luckynum None %}
+        <h4>Lucky Number: {{ request.session.luckynum }}</h4>
+    {% else %}
+        <h4>Lucky Number: 0</h4>
+    {% endifnotequal %}
+</body>
+
+
+
+</html>

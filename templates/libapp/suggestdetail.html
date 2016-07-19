@@ -1,0 +1,12 @@
+{% extends 'libapp/base.html' %}
+{% block body_block %}
+    {% if suggestlist %}
+        Title: {{ suggestlist.title }}<br/>
+        Type: {{ suggestlist.get_type_display }}<br/>
+        Publish Year: {{ suggestlist.pubyr }}<br/>
+        Cost: {{ suggestlist.cost }}<br/>
+        Comments: {{ suggestlist.comments }}<br/>
+    {% else %}
+        No such item in Suggestion list.
+    {% endif %}
+{% endblock %}
